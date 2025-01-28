@@ -1,27 +1,21 @@
-import  { useState } from 'react';
+import { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
- // Your existing CSS file
-
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate(); // Hook for navigating
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simple validation (check if fields are not empty)
     if (username === '' || password === '') {
       setError('Please enter both username and password.');
     } else {
-      // Simulate successful login
-      setError(null); // Reset error
-
-      // Redirect to Home page after successful login
-      navigate('/');
+      setError(null);
+      navigate('/home'); 
     }
   };
 

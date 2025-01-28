@@ -1,18 +1,16 @@
 import { useState } from 'react';
 
-
 function Home() {
   const [cards, setCards] = useState([
-    'claverace.png', 'claver2.jpeg', 'claver3.jpeg', 'claver4.jpeg', 'claver5.jpeg', 'claver6.png', 'claver7.jpeg', 'claver8.png', 'claver9.jpeg', 'claver10.jpeg', '4.png', '3.png', '2.png'
+    'claverace.png', 'claver2.jpeg', 'claver3.jpeg', 'claver4.jpeg', 'claver5.jpeg', 'claver6.png', 'claver7.jpeg', 'claver8.png', 'claver9.jpeg', 'claver10.jpeg', 'claverjack.png', 'claverqueen.jpeg', 'claverking.png','diamondace.png',
   ]);
 
-  const [player1Hand, setPlayer1Hand] = useState([]); 
-  const [player2Hand, setPlayer2Hand] = useState([]); 
+  const [player1Hand, setPlayer1Hand] = useState([]);
+  const [player2Hand, setPlayer2Hand] = useState([]);
   const [selectedCardPlayer1, setSelectedCardPlayer1] = useState(null);
-  const [selectedCardPlayer2, setSelectedCardPlayer2] = useState(null); 
-  const [playArea, setPlayArea] = useState({ player1Card: null, player2Card: null }); 
+  const [selectedCardPlayer2, setSelectedCardPlayer2] = useState(null);
+  const [playArea, setPlayArea] = useState({ player1Card: null, player2Card: null });
 
-  // Function to draw a card for a player
   const drawCard = (player) => {
     if (cards.length > 0) {
       const drawnCard = cards[0];
@@ -25,7 +23,6 @@ function Home() {
     }
   };
 
-  // Function to play the selected cards
   const playCard = () => {
     if (selectedCardPlayer1 && selectedCardPlayer2) {
       setPlayArea({
@@ -33,7 +30,6 @@ function Home() {
         player2Card: selectedCardPlayer2,
       });
 
-      // Remove the selected cards from players' hands
       setPlayer1Hand((prevHand) =>
         prevHand.filter((card) => card !== selectedCardPlayer1)
       );
@@ -41,7 +37,6 @@ function Home() {
         prevHand.filter((card) => card !== selectedCardPlayer2)
       );
 
-      // Reset the selected cards
       setSelectedCardPlayer1(null);
       setSelectedCardPlayer2(null);
     }
@@ -63,6 +58,7 @@ function Home() {
             </div>
           ))}
         </div>
+
       </div>
 
       <div className="play-area">
@@ -71,7 +67,7 @@ function Home() {
           <div className="card play-card">
             {playArea.player1Card ? (
               <img
-                src={`/images/cards/${playArea.player1Card}`}
+                src={`${playArea.player1Card}`}
                 alt={playArea.player1Card}
               />
             ) : (
@@ -81,7 +77,7 @@ function Home() {
           <div className="card play-card">
             {playArea.player2Card ? (
               <img
-                src={`/images/cards/${playArea.player2Card}`}
+                src={`${playArea.player2Card}`}
                 alt={playArea.player2Card}
               />
             ) : (
@@ -101,7 +97,7 @@ function Home() {
                 className={`card ${selectedCardPlayer1 === card ? 'selected' : ''}`}
                 onClick={() => setSelectedCardPlayer1(card)}
               >
-                <img src={`/images/cards/${card}`} alt={card} />
+                <img src={`${card}`} alt={card} />
               </div>
             ))}
           </div>
@@ -119,7 +115,7 @@ function Home() {
                 className={`card ${selectedCardPlayer2 === card ? 'selected' : ''}`}
                 onClick={() => setSelectedCardPlayer2(card)}
               >
-                <img src={`/images/cards/${card}`} alt={card} />
+                <img src={`${card}`} alt={card} />
               </div>
             ))}
           </div>

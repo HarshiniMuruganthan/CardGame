@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +6,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== Login Page Styles ===== */
+
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: 
-    url('bg.jpeg') no-repeat center center / cover; /* Background image */
+    url('bg.jpeg') no-repeat center center / cover; 
 }
 
 .login-box {
@@ -104,7 +104,7 @@
   margin-bottom: 15px;
 }
 
-/* ===== Home Page Styles ===== */
+
 .App {
   padding: 20px;
   background-color: #f4f4f4;
@@ -118,7 +118,7 @@ h1 {
 }
 
 h1 .color-one {
-  color: #6944af; /* Matches the theme */
+  color: #6944af; 
 }
 
 h1 .color-two {
@@ -219,7 +219,7 @@ button:disabled {
   gap: 10px;
 }
 
-/* ===== Responsive Design ===== */
+
 @media (max-width: 600px) {
   .login-box,
   .App {

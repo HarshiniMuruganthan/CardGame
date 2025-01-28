@@ -1,6 +1,6 @@
 
 header {
-    background-color: #8a53a1; /* Purple background for the navbar */
+    background-color: #8a53a1; 
     padding: 15px 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -33,14 +33,14 @@ header {
   }
   
   .link:hover {
-    background-color: #9b59b6; /* Darker purple on hover */
+    background-color: #9b59b6; 
   }
   
   .link:active {
-    background-color: #6c3483; /* Even darker purple when clicked */
+    background-color: #6c3483; 
   }
   
-  /* Mobile responsiveness: Adjust navbar items */
+  
   @media screen and (max-width: 768px) {
     ol {
       flex-direction: column;
